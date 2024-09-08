@@ -113,19 +113,20 @@ function isAdjacent(row1, col1, row2, col2) {
 // Yutishni tekshirish
 function checkWin(player) {
     const winPatterns = [
-        [[0, 0], [0, 1], [0, 2]], // 1-qator
         [[1, 0], [1, 1], [1, 2]], // 2-qator
-        [[2, 0], [2, 1], [2, 2]], // 3-qator
-        [[0, 0], [1, 0], [2, 0]], // 1-stun
-        [[0, 1], [1, 1], [2, 1]], // 2-stun
-        [[0, 2], [1, 2], [2, 2]], // 3-stun
-        [[0, 0], [1, 1], [2, 2]], // Diagonal 1
-        [[0, 2], [1, 1], [2, 0]], // Diagonal 2
+        [[0, 0], [1, 0], [2, 0]], // 1-ustun
+        [[0, 1], [1, 1], [2, 1]], // 2-ustun
+        [[0, 2], [1, 2], [2, 2]], // 3-ustun
+        [[0, 0], [1, 1], [2, 2]], // Chapdan o'ngga diagonal
+        [[0, 2], [1, 1], [2, 0]], // O'ngdan chapga diagonal
     ];
 
     for (const pattern of winPatterns) {
-        if (pattern.every(([x, y]) => board[x][y] === player)) {
-            winningLine = pattern;
+        // Tekshirish: faqat 1-qator yoki 3-qator emasligini ta'minlash
+        const isRow1Or3 = pattern.every(([x, y]) => x === 0 || x === 2);
+
+        if (pattern.every(([x, y]) => board[x][y] === player) && !isRow1Or3) {
+            winningLine = pattern; // Yutgan chiziqni saqlash
             return true;
         }
     }
