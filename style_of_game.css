@@ -34,7 +34,6 @@ body {
 /* Tugmalarni markazga joylashtirish va dizayn */
 #playerSelection, #resetButton {
     display: flex;
-    justify-content: center; /* Markazga joylash */
     margin-top: 20px; /* Yuqoridan masofa */
 }
 
