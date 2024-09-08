@@ -31,3 +31,19 @@ body {
     font-size: 20px;
     margin-top: 10px;
 }
+/* Tugmalarni markazga joylashtirish va dizayn */
+#playerSelection, #resetButton {
+    display: flex;
+    justify-content: center; /* Markazga joylash */
+    margin-top: 20px; /* Yuqoridan masofa */
+}
+
+#resetButton {
+    margin-top: 30px; /* Qayta tiklash tugmasi uchun */
+}
+
+button {
+    padding: 10px 20px; /* Tugma kattaligi */
+    font-size: 16px; /* Tugma matni */
+    cursor: pointer; /* Kursor o'zgartirish */
+}
