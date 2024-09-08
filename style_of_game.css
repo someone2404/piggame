@@ -35,6 +35,7 @@ body {
 #playerSelection, #resetButton {
     display: flex;
     margin-top: 20px; /* Yuqoridan masofa */
+    margin-bottom: 20px;
 }
 
 #resetButton {
